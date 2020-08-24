@@ -7,7 +7,7 @@ $host_name = "127.0.0.1";
 $user_name = "root";
 $db_password = "pm#corporate1";
 $db_name = "natsumoto";
-$table_name = "air_temp";
+$table_name = "amedas_temp";
 $area_url = "http://www.jma.go.jp/jp/amedas_h/today-33686.html?areaCode=000&groupCode=22";
 #$area_no = "1"; # 1 新町　2 釜石
 
@@ -110,7 +110,7 @@ foreach( $_rawData as $_rawBlock ) {
         }
 
         //mysql構文4 データ登録用
-        $sql = "replace into air_temp values ( " .$sc_date . ", " . $sc_time . ", " . (float)$sc_temp . ");";
+        $sql = "replace into " . $table_name . " values ( " .$sc_date . ", " . $sc_time . ", " . (float)$sc_temp . ");";
         $mysqli_result = $mysqli->query($sql);
         if (!$mysqli_result) {
             die('insert fault'.mysql_error() . "\n");
