@@ -109,8 +109,9 @@ foreach( $_rawData as $_rawBlock ) {
             $mysqli->set_charset("utf8");
         }
 
-        //mysql構文4 データ登録用
-        $sql = "replace into " . $table_name . " values ( " .$sc_date . ", " . $sc_time . ", " . (float)$sc_temp . ");";
+        //mysql構文 データ登録用
+        $sql = 'replace into ' . $table_name . ' values (' .$sc_date . ', ' . $sc_time . ', "' . (float)$sc_temp . '");';
+        echo $sql;
         $mysqli_result = $mysqli->query($sql);
         if (!$mysqli_result) {
             die('insert fault'.mysql_error() . "\n");
