@@ -81,9 +81,10 @@ foreach( $_rawData as $_rawBlock ) {
         }
         $sc_time = $_rawBlock[0];    //取得時刻
         $sc_temp = $_rawBlock[1];    //気温
-        $sc_rain = $_rawBlock[2];    //時間降水量
-        $sc_wind = $_rawBlock[3];    //風量
-        $sc_wspd = $_rawBlock[4];    //風速
+        # 以下未使用
+        #$sc_rain = $_rawBlock[2];    //時間降水量
+        #$sc_wind = $_rawBlock[3];    //風量
+        #$sc_wspd = $_rawBlock[4];    //風速
         #$sc_sun  = $_rawBlock[5];    //日照量
 
 
@@ -109,7 +110,7 @@ foreach( $_rawData as $_rawBlock ) {
         }
 
         //mysql構文4 データ登録用
-        $sql = "replace into area_info values ( " .$sc_date . ", " . $sc_time . (float)$sc_temp . ");";
+        $sql = "replace into air_temp values ( " .$sc_date . ", " . $sc_time . ", " . (float)$sc_temp . ");";
         $mysqli_result = $mysqli->query($sql);
         if (!$mysqli_result) {
             die('insert fault'.mysql_error() . "\n");
