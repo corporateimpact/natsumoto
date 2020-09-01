@@ -22,6 +22,9 @@ $column_time  = "times";        // 主キー2
 $dateStr = date("Ymd");
 $timeStr = date("Hi00");
 $org_date = date("Y/m/d");
+
+$camera_id = 1;
+
 if (isset($_POST['date'])) {
     if ($_POST['date'] != "") {
         $dateStr = str_replace("/", "", $_POST['date']);
@@ -385,10 +388,10 @@ $mysqli->close();
         <table>
             <td>
                 <form action="main.php" method="post" name="aForm">
+                    <input type="hidden" name="camera" value="<?php echo $camera_id ?>" />
                     <input type="button" value="　撮影画像　" onClick="goImage();">
                     <input type="button" value="　グラフ　" onClick="onGraph();">
                     <!-- <input type="button" value="　養殖日誌　" onClick="onList();"> -->
-                    <input type="hidden" name="camera" value="<?php echo $camera_id ?>" />
                 </form>
             </td>
         </table>
