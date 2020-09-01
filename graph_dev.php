@@ -327,7 +327,7 @@ $mysqli->close();
     /**
      * メイン画面へ遷移する処理
      */
-    function goImage() {
+    function goMovie() {
         aForm.action = "main.php";
         aForm.submit();
     }
@@ -381,64 +381,43 @@ $mysqli->close();
 </head>
 
 <body>
-    <div style="background-color:#FFF;height: 40px;">
-        <table>
-            <td>
-                <form action="main.php" method="post" name="aForm">
-                    <input type="button" value="　撮影画像　" onClick="goImage();">
-                    <input type="button" value="　グラフ　" onClick="onGraph();">
-                    <!-- <input type="button" value="　養殖日誌　" onClick="onList();"> -->
-                    <input type="hidden" name="camera" value="<?php echo $camera_id ?>" />
-                </form>
-            </td>
-        </table>
-    </div>
-        <div>
-            <form method='POST' action='graph.php'>
-                <table>
-                    <td>
-                        <input type="text" name="date" id="xxdate" readonly="readonly" value="<?php echo $org_date; ?>">
-                        <input type="submit" value="変更" >
-                    </td>
-                </table>
-            </form>
-            <hr>
-            <!-- <?php echo substr($dateStr, 0, 4); ?>/<?php echo substr($dateStr, 4, 2); ?>/<?php echo substr($dateStr, 6, 2); ?> -->
-
-        </div>
-
-
+    <form action="main.php" method="post" name="aForm">
+    <input type="text" name="date" id="xxdate" readonly="readonly" value="<?php echo $org_date; ?>">
+    <input type="button" value="　撮影画像　" onClick="goMovie();">
+    <input type="button" value="　グラフ　" onClick="onGraph();">
+    <!-- <input type="button" value="　養殖日誌　" onClick="onList();"> -->
+    <hr>
     <input type="button" value="グラフデータダウンロード" onclick="onDownload();"> <input type="text" name="date_from" id="xxdate2" readonly="readonly" value="<?php echo $org_date; ?>"> ～ <input type="text" name="date_to" id="xxdate3" readonly="readonly" value="<?php echo $org_date; ?>">
     </form>
-    <br>
+
     <?php echo $org_date; ?>
 
     <style type="text/css">
     span.abc {
         display: inline-block;
     }
-    table.info {
+    table {
         text-align: center;
         font-size: 12pt;
         font-weight: bold;
     }
-    table.info th{
+    table th{
         padding : 5px 5px;
     }
-    table.info td{
+    table td{
         padding : 5px 5px;
     }
-    table.info th, table.info td{
+    th,td{
         border:solid 1px #aaaaaa;
     }
-    table.info tr:nth-child(2){
+    table tr:nth-child(2){
         background: #fff5e5;
         }
     </style>
 
 
     <div align="center">
-    <table class="info">
+    <table>
         <tbody>
             <tr>
                 <th></th>
