@@ -539,8 +539,8 @@ $mysqli->close();
             type: "line",
             label: "夏本気温（℃）",
             data: [<?php echo $natsumoto_temp; ?>],
-            borderColor: "rgba(255,150,0,0.4)",
-            backgroundColor: "rgba(255,150,0,0.4)",
+            borderColor: "rgba(108,158,61,0.4)",
+            backgroundColor: "rgba(108,158,61,0.4)",
             spanGaps: true,
             fill: false, // 中の色を抜く
             yAxisID: "y-axis-1",
