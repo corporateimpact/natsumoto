@@ -460,6 +460,15 @@ if (file_exists("images/" . $camera_id . "/" . $dateStr . "/" . $dateStr . "_" .
         </td>
       </table>
     </form>
+    </br>
+    <form method='POST' action='main_dev.php'>
+      <table>
+        <td>
+          <input type="hidden" name="time" value="<?php echo $now = date("Hi00"); ?>">
+          <input type='submit' value='現在時刻' />
+        </td>
+      </table>
+    </form>
     <hr>
 
     <?php echo substr($dateStr, 0, 4); ?>/<?php echo substr($dateStr, 4, 2); ?>/<?php echo substr($dateStr, 6, 2); ?>
