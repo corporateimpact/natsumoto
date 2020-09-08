@@ -406,7 +406,6 @@ $mysqli->close();
                 </table>
             </form>
             <hr>
-            <!-- <?php echo substr($dateStr, 0, 4); ?>/<?php echo substr($dateStr, 4, 2); ?>/<?php echo substr($dateStr, 6, 2); ?> -->
 
         </div>
 
