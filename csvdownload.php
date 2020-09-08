@@ -54,7 +54,7 @@ $mysqli = new mysqli('localhost', 'root', 'pm#corporate1', 'natsumoto');
 $mysqli->set_charset('utf8');
 
 //測定値テーブル抽出クエリ
-$sql = "SELECT natsumoto_data.days, natsumoto_data.times, natsumoto_data.water_temp, natsumoto_data.natsumoto_temp, amedas_temp.air_temp FROM natsumoto_data LEFT JOIN amedas_temp ON natsumoto_data.days = amedas_temp.days AND natsumoto_data.times = amedas_temp.times WHERE natsumoto_data.day BETWEEN '" . $dl_date_from . "' AND '" . $dl_date_to . "' ORDER BY natsumoto_data.days, natsumoto_data.times";
+$sql = "SELECT natsumoto_data.days, natsumoto_data.times, natsumoto_data.water_temp, natsumoto_data.natsumoto_temp, amedas_temp.air_temp FROM natsumoto_data LEFT JOIN amedas_temp ON natsumoto_data.days = amedas_temp.days AND natsumoto_data.times = amedas_temp.times WHERE natsumoto_data.days BETWEEN '" . $dl_date_from . "' AND '" . $dl_date_to . "' ORDER BY natsumoto_data.days, natsumoto_data.times";
 
 $res = $mysqli->query($sql);
 
