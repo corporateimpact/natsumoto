@@ -347,8 +347,8 @@ $mysqli->close();
      * CSVダウンロード処理
      */
     function onDownload() {
-        aForm.action = "csvdownload.php";
-        aForm.submit();
+        aForm_graph.action = "csvdownload.php";
+        aForm_graph.submit();
     }
 
     /**
