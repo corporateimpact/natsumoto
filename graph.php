@@ -242,7 +242,7 @@ $threeday_ago = date('Y-m-d', strtotime('-3 day'));
 
 
 // 平均値データの抽出　志津川気温
-$sql4 = "select round(avg(air_temp), 1) as " . $column_day . " from " . $amedas_db . " group by " . $column_day . " order by " . $column_day . " desc, " . $column_time . " desc limit 4;";
+$sql4 = "select round(avg(air_temp), 1) as temp from " . $amedas_db . " group by " . $column_day . " order by " . $column_day . " desc, " . $column_time . " desc limit 4;";
 $res4 = $mysqli->query($sql4);
 $old_amedas_temp = array();
 
@@ -260,6 +260,8 @@ while ($row5 = $res5->fetch_array() ){
     $old_water_temp[] = $row5[0];
     $old_air_temp[] = $row5[1];
 }
+
+//グラフY軸の調整用
 
 
 
@@ -512,9 +514,9 @@ $mysqli->close();
                 labelString: "気温（℃）"
             },
             ticks: {
-                max: 35,
-                min: 0,
-                stepSize: 5
+                max: 35.0,
+                min: 0.0,
+                stepSize: 5.0
             },
             gridLines: {
             drawOnChartArea: true,
