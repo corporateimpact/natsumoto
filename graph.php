@@ -446,7 +446,7 @@ $mysqli->close();
         <tbody>
             <tr>
                 <th></th>
-                <th>新町気温</th>
+                <th>釜石気温</th>
                 <th>水槽水温</th>
                 <th>夏本気温</th>
             </tr>
