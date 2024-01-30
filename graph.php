@@ -572,7 +572,7 @@ $mysqli->close();
         },
         {
             type: "line",
-            label: "新町気温（℃）",
+            label: "釜石気温（℃）",
             data: [<?php echo $amedas_temp; ?>],
             borderColor: "rgba(255,150,0,0.4)",
             backgroundColor: "rgba(255,150,0,0.4)",
